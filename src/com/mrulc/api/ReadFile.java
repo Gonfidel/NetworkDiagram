@@ -1,4 +1,4 @@
-package com.mrulc.api.view;
+package com.mrulc.api;
 import java.io.IOException;
 import java.io.FileReader;
 import java.io.BufferedReader;
@@ -27,7 +27,7 @@ public class ReadFile {
         return textData;
     }
 
-    // COUNTS AMOUNT OF LINES IN TEXT FILE
+    // COUNTS AMOUNT OF LINES IN TEXT FILE //
     int readLines() throws IOException {
 
         FileReader file_to_read = new FileReader(path);

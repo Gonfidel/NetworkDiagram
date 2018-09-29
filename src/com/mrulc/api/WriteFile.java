@@ -1,4 +1,4 @@
-package com.mrulc.api.view;
+package com.mrulc.api;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.io.IOException;
@@ -7,7 +7,7 @@ public class WriteFile {
     private String path;
     private boolean append_to_file = false;
 
-    /* OVERWRITE EXISTING TEXT FILE */
+    /* *OVERWRITE EXISTING TEXT FILE* */
     public WriteFile(String file_path) {
         path = file_path;
     /* ******************* */

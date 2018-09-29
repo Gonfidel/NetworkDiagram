@@ -1,4 +1,7 @@
-package com.mrulc.api.view;
+package com.mrulc.api;
+import com.mrulc.api.ReadFile;
+import com.mrulc.api.WriteFile;
+
 import java.io.IOException;
 
 public class HardwareList {
@@ -22,7 +25,7 @@ public class HardwareList {
         catch (IOException e) {
             System.out.println("Error");
         }
-
+// test
 
 
 
