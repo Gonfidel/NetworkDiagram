@@ -19,9 +19,6 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 1600, 850));
         primaryStage.show();
     }
-    /**
-     * The data as an observable list of Persons.
-     */
 
 
     public static void main(String[] args){
