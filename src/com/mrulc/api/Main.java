@@ -8,6 +8,6 @@ public class Main {
 
         System.out.println("Hello Moto");
         System.out.println("sdfsdfsdf");
-        System.out.println("asdfjsldkjfsldkjf");
+        System.out.println("asdfjsldkdfgjfsldkjf");
     }
 }
