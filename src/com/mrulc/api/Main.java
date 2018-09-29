@@ -1,6 +1,8 @@
 package com.mrulc.api;
 
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -17,6 +19,9 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 1600, 850));
         primaryStage.show();
     }
+    /**
+     * The data as an observable list of Persons.
+     */
 
 
     public static void main(String[] args){
@@ -24,6 +29,13 @@ public class Main extends Application {
         /**********************************
          |      ACTIVATES GUI           |
          *********************************/
+
         launch(args);
+
     }
+
+
+
+
+
 }

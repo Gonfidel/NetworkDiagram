@@ -1,17 +1,13 @@
 package com.mrulc.api;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
 public class Hardware {
     private String name;
-    private InetAddress ip;
-    //private InetAddress sub;
-/*
-
-    public Hardware(String ipString) throws UnknownHostException {
-        this.ip = InetAddress.getByName(ipString);
-    }
-*/
+    private String ip;
 
 }
