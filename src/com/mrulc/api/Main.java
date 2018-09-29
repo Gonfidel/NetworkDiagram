@@ -12,8 +12,8 @@ import java.io.File;
 import java.net.UnknownHostException;
 import java.util.Scanner;
 
-public class Main /** extends Application */{
-/**
+public class Main  extends Application {
+
     @Override
     public void start(Stage stage1) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("view/HardwareGrid.fxml"));
@@ -22,16 +22,17 @@ public class Main /** extends Application */{
         stage1.show();
     }
 
-*/
+
     public static void main(String[] args) throws Exception{
         /**********************************
          |      ACTIVATES GUI           |
          *********************************/
-        //launch(args);
+
 
         //CreateFile.createFile();
         Read_File read = new Read_File();
         read.readFile();
+        launch(args);
 
     }
 

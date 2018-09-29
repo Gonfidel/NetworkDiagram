@@ -77,9 +77,12 @@ public class Hardware {
     //}
 
 
-
-
-
-
-
+    @Override
+    public String toString() {
+        return "Hardware{" +
+                "name='" + name + '\'' +
+                ", ip=" + ip +
+                ", subNet=" + subNet +
+                '}';
+    }
 }

@@ -19,6 +19,7 @@ public class Read_File{
             hardware.setName(name);
             hardware.setIp(ip);
             HardwareList.hardwarelist.add(hardware);
+            System.out.println(hardware.toString());
         }
     }
 
