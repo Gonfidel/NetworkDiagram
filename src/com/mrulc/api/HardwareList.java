@@ -1,4 +1,4 @@
-package com.mrulc.api.view;
+package com.mrulc.api;
 
 public class HardwareList {
 }
