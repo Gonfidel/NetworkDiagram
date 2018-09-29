@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
+<?import com.gluonhq.charm.glisten.control.AppBar?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
   <children>
     <AnchorPane prefHeight="850.0" prefWidth="1600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
@@ -15,24 +20,29 @@
           <items>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
               <children>
-                <SplitPane dividerPositions="0.9633569739952719" focusTraversable="true" orientation="VERTICAL" prefHeight="848.0" prefWidth="340.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <SplitPane dividerPositions="0.9444444444444444" focusTraversable="true" orientation="VERTICAL" prefHeight="848.0" prefWidth="340.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                   <items>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                       <children>
-                        <TableView blendMode="SRC_OVER" focusTraversable="true" prefHeight="608.0" prefWidth="338.0" visible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                          <columns>
-                            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="168.0" resizable="false" text="Harware" />
-                            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="98.0" resizable="false" text="IP Address" />
-                            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="83.0" resizable="false" text="Reachable?" />
-                          </columns>
-                        </TableView>
+                                    <VBox prefHeight="795.0" prefWidth="348.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <AppBar titleText="Hardware" />
+                                          <TableView blendMode="SRC_OVER" focusTraversable="true" prefHeight="765.0" prefWidth="348.0" visible="true">
+                                             <columns>
+                                                <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="168.0" resizable="false" text="Harware" />
+                                                <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="98.0" resizable="false" text="IP Address" />
+                                                <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="83.0" resizable="false" text="Reachable?" />
+                                             </columns>
+                                          </TableView>
+                                       </children>
+                                    </VBox>
                       </children>
                     </AnchorPane>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="21.0" prefWidth="338.0">
                       <children>
-                        <Button layoutX="12.0" layoutY="4.0" mnemonicParsing="false" prefWidth="103.0" text="Add Hardware" />
-                        <Button layoutX="115.0" layoutY="4.0" mnemonicParsing="false" prefWidth="109.0" text="Edit Hardware" />
-                        <Button layoutX="223.0" layoutY="4.0" mnemonicParsing="false" prefWidth="102.0" text="Delete Hardware" />
+                        <Button layoutX="6.0" layoutY="4.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="103.0" text="Add Hardware" />
+                        <Button layoutX="109.0" layoutY="4.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="103.0" text="Edit Hardware" />
+                        <Button layoutX="212.0" layoutY="4.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="119.0" text="Delete Hardware" />
                       </children>
                     </AnchorPane>
                   </items>
@@ -41,7 +51,7 @@
             </AnchorPane>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
               <children>
-                <GridPane gridLinesVisible="true" minHeight="-1.0" prefHeight="848.0" prefWidth="1252.0" scaleX="1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <GridPane gridLinesVisible="true" layoutX="7.0" minHeight="-1.0" prefHeight="848.0" prefWidth="1252.0" scaleX="1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="-7.0" AnchorPane.topAnchor="0.0">
                   <columnConstraints>
                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />

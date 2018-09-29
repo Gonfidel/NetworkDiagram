@@ -1,26 +1,29 @@
 package com.mrulc.api;
 
-import com.mrulc.api.FxTemplate.FxTemplate;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 import java.net.UnknownHostException;
 
-public class Main {
+public class Main extends Application {
 
-    public static void main(String[] args) throws UnknownHostException {
-        //Hardware ManagerTerminal = new Hardware("192.168.1.80");
-
-
-
-
-
-
-
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("view/HardwareGrid.fxml"));
+        primaryStage.setTitle("Network Diagram");
+        primaryStage.setScene(new Scene(root, 1600, 850));
+        primaryStage.show();
+    }
 
 
+    public static void main(String[] args){
 
         /**********************************
-         |      ACTIVATED GUI           |
+         |      ACTIVATES GUI           |
          *********************************/
-        FxTemplate.main(new String[0]);
+        launch(args);
     }
 }
