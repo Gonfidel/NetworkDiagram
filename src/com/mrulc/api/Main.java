@@ -29,7 +29,7 @@ public class Main  extends Application {
          *********************************/
 
 
-        //CreateFile.createFile();
+        CreateFile.createFile();
         Read_File read = new Read_File();
         read.readFile();
         launch(args);
