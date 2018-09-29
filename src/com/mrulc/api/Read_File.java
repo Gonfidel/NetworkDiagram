@@ -7,10 +7,11 @@ import java.util.Scanner;
 
 public class Read_File{
 
-    private File file = new File("C:\\Users\\Public\\NetworkDiagram\\data.txt");
-    private Scanner sc;
 
-    public void readFile() throws FileNotFoundException,UnknownHostException {
+
+    public static void readFile() throws FileNotFoundException,UnknownHostException {
+        File file = new File("C:\\Users\\Public\\NetworkDiagram\\data.txt");
+        Scanner sc;
         sc = new Scanner(file);
         while (sc.hasNext()) {
             Hardware hardware = new Hardware();

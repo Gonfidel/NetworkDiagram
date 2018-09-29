@@ -28,10 +28,8 @@ public class Main  extends Application {
          |      ACTIVATES GUI           |
          *********************************/
 
-
-        CreateFile.createFile();
-        Read_File read = new Read_File();
-        read.readFile();
+        Create_File.createFile();
+        Read_File.readFile();
         launch(args);
 
     }

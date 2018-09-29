@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-public class CreateFile {
+public class Create_File {
     public static void createFile() throws Exception {
         File file = new File("C:\\Users\\Public\\NetworkDiagram\\data.txt");
 
