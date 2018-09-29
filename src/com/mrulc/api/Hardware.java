@@ -12,37 +12,41 @@ public class Hardware {
     private InetAddress ip;
     private InetAddress subNet;
 
-    private SimpleStringProperty sspName;
-    private SimpleStringProperty sspIp;
-    private SimpleStringProperty sspSubNet;
+    //private SimpleStringProperty sspName;
+    //private SimpleStringProperty sspIp;
+    //private SimpleStringProperty sspSubNet;
 
 
 /* *****************************************************************
                            CONSTRUCTOR
  ***************************************************************** */
+
+    public Hardware(){
+
+    }
     public Hardware(String name, String ip, String subNet) throws UnknownHostException{
          this.name = name;
          this.ip = InetAddress.getByName(ip);
          this.subNet = InetAddress.getByName(subNet);
-         this.sspName = new SimpleStringProperty(name);
-         this.sspIp = new SimpleStringProperty(ip);
-         this.sspSubNet = new SimpleStringProperty(subNet);
+        // this.sspName.set(name);
+        // this.sspIp.set(ip);
+        // this.sspSubNet.set(subNet);
 }
 /* *************************************************************** */
 
     public void setName(String name) {
         this.name = name;
-        this.sspName = new SimpleStringProperty(name);
+        //this.sspName.set(name);
 }
 
     public void setIp(String ip) throws UnknownHostException {
         this.ip = InetAddress.getByName(ip);
-        this.sspIp = new SimpleStringProperty(ip);
+        //this.sspIp.set(ip);
     }
 
     public void setSubNet(String subNet) throws UnknownHostException{
         this.subNet = InetAddress.getByName(subNet);
-        this.sspSubNet = new SimpleStringProperty(subNet);
+        //this.sspSubNet.set(subNet);
     }
 
     public String getName() {
@@ -59,18 +63,18 @@ public class Hardware {
     }
 
 
-    public SimpleStringProperty getNameProperty() {
-        return sspName;
-    }
+   // public SimpleStringProperty getNameProperty() {
+       // return sspName;
+   // }
 
-    public SimpleStringProperty getIpProperty() {
+   // public SimpleStringProperty getIpProperty() {
 
-        return sspIp;
-    }
+      //  return sspIp;
+   // }
 
-    public SimpleStringProperty getSubNetProperty() {
-        return sspSubNet;
-    }
+    //public SimpleStringProperty getSubNetProperty() {
+        //return sspSubNet;
+    //}
 
 
 

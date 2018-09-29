@@ -7,26 +7,31 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
+import java.io.File;
 import java.net.UnknownHostException;
+import java.util.Scanner;
 
-public class Main extends Application {
-
+public class Main /** extends Application */{
+/**
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage stage1) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("view/HardwareGrid.fxml"));
-        primaryStage.setTitle("Network Diagram");
-        primaryStage.setScene(new Scene(root, 1600, 850));
-        primaryStage.show();
+        stage1.setTitle("Network Diagram");
+        stage1.setScene(new Scene(root, 1600, 850));
+        stage1.show();
     }
 
-
-    public static void main(String[] args){
-
+*/
+    public static void main(String[] args) throws Exception{
         /**********************************
          |      ACTIVATES GUI           |
          *********************************/
+        //launch(args);
 
-        launch(args);
+        //CreateFile.createFile();
+        Read_File read = new Read_File();
+        read.readFile();
 
     }
 
