@@ -17,6 +17,9 @@ public class Create_File {
             }
         } catch (FileNotFoundException e) {
             PrintWriter writer = new PrintWriter(file);
+            writer.write("ManagerTerminal ");
+            writer.write("192.168.1.80 ");
+            writer.write("SICOM\n");
             writer.close();
         } catch (Exception e) {
             System.out.println("Severe error");

@@ -15,10 +15,9 @@ public class Read_File{
         sc = new Scanner(file);
         while (sc.hasNext()) {
             Hardware hardware = new Hardware();
-            String name = sc.next();
-            String ip = sc.next();
-            hardware.setName(name);
-            hardware.setIp(ip);
+            hardware.setName(sc.next());
+            hardware.setIp(sc.next());
+            hardware.setSubNet(sc.next());
             HardwareList.hardwarelist.add(hardware);
             System.out.println(hardware.toString());
         }
