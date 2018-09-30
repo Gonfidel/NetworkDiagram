@@ -39,18 +39,31 @@ public class Hardware {
         this.sspSubNet = new SimpleStringProperty(subNet);
     }
 
-    public SimpleStringProperty getName() {
+    public SimpleStringProperty getPropertyName() {
         return sspName;
     }
 
-    public SimpleStringProperty getIp() {
+    public SimpleStringProperty getPropertyIp() {
         return sspIp;
     }
 
-    public SimpleStringProperty getSubNet() {
+    public SimpleStringProperty getPropertySubNet() {
         return sspSubNet;
     }
 
+
+
+    public String getName() {
+        return sspName.toString();
+    }
+
+    public String getIp() {
+        return sspIp.toString();
+    }
+
+    public String getSubNet() {
+        return sspSubNet.toString();
+    }
 
 
 

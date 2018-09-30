@@ -1,5 +1,6 @@
 package com.mrulc.api;
 
+import com.mrulc.api.view.FxController;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -32,6 +33,8 @@ public class Main  extends Application {
 
         Create_File.createFile();
         Read_File.readFile();
+        //FxController newcontroller = new FxController();
+        //newcontroller.initialize();
         launch(args);
 
     }
