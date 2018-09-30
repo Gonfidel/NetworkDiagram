@@ -54,15 +54,15 @@ public class Hardware {
 
 
     public String getName() {
-        return sspName.toString();
+        return sspName.get();
     }
 
     public String getIp() {
-        return sspIp.toString();
+        return sspIp.get();
     }
 
     public String getSubNet() {
-        return sspSubNet.toString();
+        return sspSubNet.get();
     }
 
 

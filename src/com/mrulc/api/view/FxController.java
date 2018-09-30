@@ -14,41 +14,34 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
 import java.net.UnknownHostException;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class FxController implements Initializable {
 
-    @FXML public TableView<Hardware> table;
-    @FXML public TableColumn<Hardware, String> hwCol;
-    @FXML public TableColumn<Hardware, String> ipCol;
-    @FXML public TableColumn<Hardware, String> subnetCol;
-
     @FXML
-    private Label label;
-
+    public TableView<Hardware> table;
     @FXML
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("Button clicked");
-        label.setText("Button clicked");
-    }
-
-
+    public TableColumn<Hardware, String> hwCol;
+    @FXML
+    public TableColumn<Hardware, String> ipCol;
+    @FXML
+    public TableColumn<Hardware, String> subnetCol;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        hwCol = new TableColumn<Hardware, String>("hwCol");
-        ipCol = new TableColumn<Hardware, String>("ipCol");
-        subnetCol = new TableColumn<Hardware, String>("subnetCol");
+        hwCol = new TableColumn<>("hwCol");
+        ipCol = new TableColumn<>("ipCol");
+        subnetCol = new TableColumn<>("subnetCol");
 
-        hwCol.setCellValueFactory(new PropertyValueFactory<>("sspName"));
-        ipCol.setCellValueFactory(new PropertyValueFactory<>("sspIp"));
-        subnetCol.setCellValueFactory(new PropertyValueFactory<>("sspSubNet"));
+        hwCol.setCellValueFactory(new PropertyValueFactory<>("hwCol"));
+        ipCol.setCellValueFactory(new PropertyValueFactory<>("ipCol"));
+        subnetCol.setCellValueFactory(new PropertyValueFactory<>("subnetCol"));
 
         /**
-         *
          *  CONFIGURE OBSERVABLE TABLE
-         *
          */
         ObservableList<Hardware> data;
         try {
@@ -61,9 +54,11 @@ public class FxController implements Initializable {
 
 
         table.setItems(data);
+        System.out.println(data);
 
 
     }
+
 
 }
 
