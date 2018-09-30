@@ -6,6 +6,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -19,6 +20,7 @@ public class Main  extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("view/HardwareGrid.fxml"));
         stage1.setTitle("Network Diagram");
         stage1.setScene(new Scene(root, 1600, 850));
+        stage1.getIcons().add(new Image(getClass().getResourceAsStream("logo.jpg")));
         stage1.show();
     }
 
