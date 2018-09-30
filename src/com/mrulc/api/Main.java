@@ -33,8 +33,6 @@ public class Main  extends Application {
 
         Create_File.createFile();
         Read_File.readFile();
-        //FxController newcontroller = new FxController();
-        //newcontroller.initialize();
         launch(args);
 
     }

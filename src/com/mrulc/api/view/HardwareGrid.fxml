@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mrulc.api.view.FxController">
   <children>
     <AnchorPane prefHeight="850.0" prefWidth="1600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
@@ -40,11 +40,11 @@
                                                 </Label>
                                              </children>
                                           </AnchorPane>
-                                          <TableView blendMode="SRC_OVER" editable="true" focusTraversable="true" prefHeight="741.0" prefWidth="348.0" visible="true">
+                                          <TableView fx:id="table" blendMode="SRC_OVER" editable="true" focusTraversable="true" prefHeight="741.0" prefWidth="348.0" visible="true">
                                              <columns>
                                                 <TableColumn fx:id="hwCol" maxWidth="5000.0" minWidth="10.0" prefWidth="168.0" resizable="false" text="Hardware" />
                                                 <TableColumn fx:id="ipCol" maxWidth="5000.0" minWidth="10.0" prefWidth="98.0" resizable="false" text="IP Address" />
-                                                <TableColumn fx:id="reachCol" maxWidth="5000.0" minWidth="10.0" prefWidth="83.0" resizable="false" text="Subnet" />
+                                                <TableColumn fx:id="subnetCol" maxWidth="5000.0" minWidth="10.0" prefWidth="83.0" resizable="false" text="Subnet" />
                                              </columns>
                                           </TableView>
                                           <HBox prefHeight="16.0" prefWidth="328.0" style="-fx-background-color: darkgray;">

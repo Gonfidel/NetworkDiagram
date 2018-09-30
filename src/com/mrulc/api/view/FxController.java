@@ -16,13 +16,15 @@ import java.net.URL;
 import java.net.UnknownHostException;
 import java.util.ResourceBundle;
 
-public class FxController implements Initializable{
+public class FxController implements Initializable {
+
+    @FXML public TableView<Hardware> table;
+    @FXML public TableColumn<Hardware, String> hwCol;
+    @FXML public TableColumn<Hardware, String> ipCol;
+    @FXML public TableColumn<Hardware, String> subnetCol;
 
     @FXML
     private Label label;
-
-    @FXML
-    private TableView myTable;
 
     @FXML
     private void handleButtonAction(ActionEvent event) {
@@ -30,30 +32,35 @@ public class FxController implements Initializable{
         label.setText("Button clicked");
     }
 
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        TableColumn hardware = new TableColumn("Hardware");
-        TableColumn ipAddress = new TableColumn("IP Address");
-        TableColumn subnet = new TableColumn("Subnet");
+
+        hwCol = new TableColumn<Hardware, String>("hwCol");
+        ipCol = new TableColumn<Hardware, String>("ipCol");
+        subnetCol = new TableColumn<Hardware, String>("subnetCol");
+
+        hwCol.setCellValueFactory(new PropertyValueFactory<>("sspName"));
+        ipCol.setCellValueFactory(new PropertyValueFactory<>("sspIp"));
+        subnetCol.setCellValueFactory(new PropertyValueFactory<>("sspSubNet"));
+
+        /**
+         *
+         *  CONFIGURE OBSERVABLE TABLE
+         *
+         */
         ObservableList<Hardware> data;
         try {
-            data = FXCollections.observableArrayList(
-                    new Hardware("ManagerTerminal", "192.168.1.80", "SICOM")
-            );
+            data = FXCollections.observableArrayList(HardwareList.hardwarelist);
             System.out.println("Added hardware to data");
         } catch (Exception e) {
             data = FXCollections.observableArrayList();
             System.out.println(e);
         }
 
-        hardware.setCellValueFactory(new PropertyValueFactory<Hardware,String>("sspName"));
-        hardware.setCellValueFactory(new PropertyValueFactory<Hardware,String>("sspIp"));
-        hardware.setCellValueFactory(new PropertyValueFactory<Hardware,String>("sspSubNet"));
 
-
-
-        myTable.setItems(data);
-
+        table.setItems(data);
 
 
     }
