@@ -8,9 +8,9 @@ import java.net.UnknownHostException;
 
 public class Hardware {
 
-    private SimpleStringProperty sspName;
-    private SimpleStringProperty sspIp;
-    private SimpleStringProperty sspSubNet;
+    private SimpleStringProperty Name;
+    private SimpleStringProperty Ip;
+    private SimpleStringProperty SubNet;
 
 
 /* *****************************************************************
@@ -20,59 +20,61 @@ public class Hardware {
     public Hardware(){
 
     }
-    public Hardware(String name, String ip, String subNet) throws UnknownHostException{
-         this.sspName.set(name);
-         this.sspIp.set(ip);
-         this.sspSubNet.set(subNet);
+    public Hardware(String name, String ip, String subNet){
+         this.Name = new SimpleStringProperty(name);
+         this.Ip = new SimpleStringProperty(ip);
+         this.SubNet = new SimpleStringProperty(subNet);
 }
 /* *************************************************************** */
 
     public void setName(String name) {
-        this.sspName = new SimpleStringProperty(name);
+        this.Name = new SimpleStringProperty(name);
 }
 
     public void setIp(String ip) throws UnknownHostException {
-        this.sspIp = new SimpleStringProperty(ip);
+        this.Ip = new SimpleStringProperty(ip);
     }
 
-    public void setSubNet(String subNet) throws UnknownHostException{
-        this.sspSubNet = new SimpleStringProperty(subNet);
+    public void setSubNet(String subNet){
+        this.SubNet = new SimpleStringProperty(subNet);
     }
-
-    public SimpleStringProperty getPropertyName() {
-        return sspName;
-    }
-
-    public SimpleStringProperty getPropertyIp() {
-        return sspIp;
-    }
-
-    public SimpleStringProperty getPropertySubNet() {
-        return sspSubNet;
-    }
-
-
 
     public String getName() {
-        return sspName.get();
+        return Name.get();
     }
 
     public String getIp() {
-        return sspIp.get();
+        return Ip.get();
     }
 
     public String getSubNet() {
-        return sspSubNet.get();
+        return SubNet.get();
     }
+
+
+    public SimpleStringProperty getPropertyName() {
+        return Name;
+    }
+
+    public SimpleStringProperty getPropertyIp() {
+        return Ip;
+    }
+
+    public SimpleStringProperty getPropertySubNet() {
+        return SubNet;
+    }
+
+
+
 
 
 
     @Override
     public String toString() {
         return "Hardware{" +
-                "name='" + sspName + '\'' +
-                ", ip=" + sspIp +
-                ", subNet=" + sspSubNet +
+                "name='" + Name + '\'' +
+                ", ip=" + Ip +
+                ", subNet=" + SubNet +
                 '}';
     }
 }

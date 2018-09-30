@@ -18,7 +18,7 @@ public class Main  extends Application {
 
     @Override
     public void start(Stage stage1) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("view/HardwareGrid.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("view/third.fxml"));
         stage1.setTitle("Network Diagram");
         stage1.setScene(new Scene(root, 1600, 850));
         stage1.getIcons().add(new Image(getClass().getResourceAsStream("logo.jpg")));

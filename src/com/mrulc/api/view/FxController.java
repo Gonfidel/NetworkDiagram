@@ -7,9 +7,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
@@ -22,43 +20,62 @@ public class FxController implements Initializable {
 
     @FXML
     public TableView<Hardware> table;
-    @FXML
     public TableColumn<Hardware, String> hwCol;
-    @FXML
     public TableColumn<Hardware, String> ipCol;
-    @FXML
     public TableColumn<Hardware, String> subnetCol;
+    public TextField nameTextField = new TextField();
+    public TextField ipTextField = new TextField();
+    public TextField subnetTextField = new TextField();
+    public Button addButton = new Button();
+
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        hwCol = new TableColumn<>("hwCol");
-        ipCol = new TableColumn<>("ipCol");
-        subnetCol = new TableColumn<>("subnetCol");
+        //hwCol = new TableColumn<>("hwCol");
+        //ipCol = new TableColumn<>("ipCol");
+        //subnetCol = new TableColumn<>("subnetCol");
 
-        hwCol.setCellValueFactory(new PropertyValueFactory<>("hwCol"));
-        ipCol.setCellValueFactory(new PropertyValueFactory<>("ipCol"));
-        subnetCol.setCellValueFactory(new PropertyValueFactory<>("subnetCol"));
-
-        /**
-         *  CONFIGURE OBSERVABLE TABLE
-         */
-        ObservableList<Hardware> data;
-        try {
-            data = FXCollections.observableArrayList(HardwareList.hardwarelist);
-            System.out.println("Added hardware to data");
-        } catch (Exception e) {
-            data = FXCollections.observableArrayList();
-            System.out.println(e);
-        }
+        hwCol.setCellValueFactory(new PropertyValueFactory<>("Name"));
+        ipCol.setCellValueFactory(new PropertyValueFactory<>("Ip"));
+        subnetCol.setCellValueFactory(new PropertyValueFactory<>("SubNet"));
 
 
-        table.setItems(data);
-        System.out.println(data);
+
+        table.setItems(getData());
+        //System.out.println(getData());
 
 
     }
 
+
+    /**
+     *  CONFIGURE OBSERVABLE TABLE
+     */
+    public ObservableList<Hardware> getData() {
+        ObservableList<Hardware> data = FXCollections.observableArrayList(HardwareList.hardwarelist);
+        System.out.println("Added hardware to data");
+        return data;
+    }
+
+
+    public void buttonAdd(ActionEvent actionEvent) {
+        Hardware hardware;
+        if (nameTextField.getText().trim().isEmpty() == false) {
+            if (ipTextField.getText().trim().isEmpty() == false) {
+                if (subnetTextField.getText().trim().isEmpty() == false) {
+                    hardware = new Hardware(nameTextField.getText().trim(), ipTextField.getText().trim(), subnetTextField.getText().trim());
+                    HardwareList.hardwarelist.add(hardware);
+                    nameTextField.clear();
+                    ipTextField.clear();
+                    subnetTextField.clear();
+                    table.getItems().add(hardware);
+                }
+            }
+        }
+    }
 
 }
 
