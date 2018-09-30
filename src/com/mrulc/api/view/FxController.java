@@ -27,6 +27,7 @@ public class FxController implements Initializable {
     public TextField ipTextField = new TextField();
     public TextField subnetTextField = new TextField();
     public Button addButton = new Button();
+    public Button delButton = new Button();
 
 
 
@@ -75,6 +76,11 @@ public class FxController implements Initializable {
                 }
             }
         }
+    }
+
+    public void buttonDel(ActionEvent actionEvent) {
+        table.getItems().removeAll(table.getSelectionModel().getSelectedItems());
+
     }
 
 }
