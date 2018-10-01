@@ -21,15 +21,23 @@ import java.util.ResourceBundle;
 public class FxController implements Initializable {
 
     @FXML
+    //TABLE AND COLUMNS
     public TableView<Hardware> table;
     public TableColumn<Hardware, String> hwCol;
     public TableColumn<Hardware, String> ipCol;
     public TableColumn<Hardware, String> subnetCol;
+    public TableColumn<Hardware, String> typeCol;
+
+    //TEXTFIELDS AND COMBOBOX
     public TextField nameTextField = new TextField();
     public TextField ipTextField = new TextField();
     public TextField subnetTextField = new TextField();
+    public ComboBox typeComboBox = new ComboBox();
+
+    //BUTTONS
     public Button addButton = new Button();
     public Button delButton = new Button();
+
 
 
     @Override

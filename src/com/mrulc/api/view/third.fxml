@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
+<?import javafx.collections.*?>
 <?import javafx.geometry.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
@@ -23,7 +24,7 @@
   <children>
     <AnchorPane prefHeight="850.0" prefWidth="1600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
-        <SplitPane dividerPositions="0.22215269086357947" focusTraversable="true" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <SplitPane dividerPositions="0.2665832290362954" focusTraversable="true" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
           <items>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
               <children>
@@ -44,16 +45,46 @@
                             </AnchorPane>
                             <TableView fx:id="table" blendMode="SRC_OVER" editable="true" focusTraversable="true" prefHeight="741.0" prefWidth="348.0" style="" visible="true">
                               <columns>
-                                <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="168.0" resizable="false" style="-fx-table-cell-border-color: transparent;" text="Hardware" fx:id="hwCol" />
-                                <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="98.0" resizable="false" text="IP Address" fx:id="ipCol" />
-                                <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="83.0" resizable="false" text="Network" fx:id="subnetCol" />
+                                <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="107.0" resizable="false" style="-fx-table-cell-border-color: transparent;" text="Name" fx:id="hwCol" />
+                                <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="91.0" resizable="false" text="IP Address" fx:id="ipCol" />
+                                <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="70.0" resizable="false" text="Network" fx:id="subnetCol" />
+                                <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="152.0" resizable="false" text="Type" fx:id="typeCol" />
                               </columns>
                             </TableView>
-                            <HBox alignment="CENTER" prefHeight="65.0" prefWidth="350.0" style="-fx-background-color: #2196F3;&#10;">
+                            <HBox alignment="CENTER_LEFT" prefHeight="65.0" prefWidth="350.0" style="-fx-background-color: #2196F3;&#10;">
                               <children>
-                                <TextField fx:id="nameTextField" prefWidth="270.0" promptText="Equipment Name" />
-                                <TextField fx:id="ipTextField" prefWidth="210.0" promptText="IP Address" />
-                                <TextField fx:id="subnetTextField" prefWidth="200.0" promptText="Network" />
+                                <TextField fx:id="nameTextField" prefWidth="103.0" promptText="Name">
+                                  <HBox.margin>
+                                    <Insets left="1.0" right="1.0" fx:id="x2" />
+                                  </HBox.margin>
+                                </TextField>
+                                <TextField fx:id="ipTextField" prefWidth="92.0" promptText="IP Address" HBox.margin="$x2" />
+                                <TextField fx:id="subnetTextField" prefWidth="72.0" promptText="Network" HBox.margin="$x2" />
+                                <ComboBox id="type" fx:id="typeComboBox" minWidth="34.0" prefHeight="21.0" prefWidth="148.0" promptText="Hardware Type" style="    -fx-background-color: white;&#10;&#10;&#10;">
+                                  <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                      <String fx:value="TERMINAL" />
+                                      <String fx:value="RECEIPT PRINTER" />
+                                      <String fx:value="KITCHEN SCREEN" />
+                                      <String fx:value="OFFICE COMPUTER" />
+                                      <String fx:value="OFFICE PRINTER" />
+                                      <String fx:value="DRIVE THRU DIRECTOR" />
+                                      <String fx:value="OCU" />
+                                      <String fx:value="PHONE" />
+                                      <String fx:value="CHEF" />
+                                      <String fx:value="PHU" />
+                                      <String fx:value="DMB SCREEN" />
+                                      <String fx:value="DMB CONTROLLER" />
+                                      <String fx:value="KIOSK" />
+                                      <String fx:value="VERIFONE" />
+                                      <String fx:value="ODMB SCREEN" />
+                                      <String fx:value="ODMB CONTROLLER" />
+                                    </FXCollections>
+                                  </items>
+                                  <HBox.margin>
+                                    <Insets bottom="2.0" left="1.0" right="1.0" />
+                                  </HBox.margin>
+                                </ComboBox>
                               </children>
                               <padding>
                                 <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" fx:id="x1" />
