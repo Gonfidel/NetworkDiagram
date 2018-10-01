@@ -35,36 +35,52 @@ public class HardwareList {
             switch(h.getType()){
                 case TERMINAL:
                     terminals.add(h);
+                    break;
                 case RECEIPT_PRINTER:
                     receipt_printers.add(h);
+                    break;
                 case KITCHEN_SCREEN:
                     kitchen_screens.add(h);
+                    break;
                 case OFFICE_COMPUTER:
                     office_computers.add(h);
+                    break;
                 case OFFICE_PRINTER:
                     office_printers.add(h);
+                    break;
                 case DRIVE_THRU_DIRECTOR:
                     drive_thru_directors.add(h);
+                    break;
                 case OCU:
                     ocus.add(h);
+                    break;
                 case PHONE:
                     phones.add(h);
+                    break;
                 case CHEF:
                     chefs.add(h);
+                    break;
                 case PHU:
                     phus.add(h);
+                    break;
                 case DMB_SCREEN:
                     dmb_screens.add(h);
+                    break;
                 case DMB_CONTROLLER:
                     dmb_controllers.add(h);
+                    break;
                 case KIOSK:
                     kiosks.add(h);
+                    break;
                 case VERIFONE:
                     verifones.add(h);
+                    break;
                 case ODMB_SCREEN:
                     odmb_screens.add(h);
+                    break;
                 case ODMB_CONTROLLER:
                     odmb_controllers.add(h);
+                    break;
                 default:
                     System.out.println("Hardware "+h.getName()+" does not containt a hardware type.");
 

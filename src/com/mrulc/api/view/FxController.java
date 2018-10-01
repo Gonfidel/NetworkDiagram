@@ -45,7 +45,7 @@ public class FxController implements Initializable {
         hwCol.setCellValueFactory(new PropertyValueFactory<>("Name"));
         ipCol.setCellValueFactory(new PropertyValueFactory<>("Ip"));
         subnetCol.setCellValueFactory(new PropertyValueFactory<>("SubNet"));
-
+        typeCol.setCellValueFactory(new PropertyValueFactory<>("type"));
         table.setItems(getData());
     }
 

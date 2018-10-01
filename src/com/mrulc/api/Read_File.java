@@ -16,7 +16,7 @@ public class Read_File{
             hardware.setName(sc.next());
             hardware.setIp(sc.next());
             hardware.setSubNet(sc.next());
-            hardware.setTypeString(sc.next());
+            hardware.setTypeString(sc.next().toUpperCase());
             HardwareList.hardwarelist.add(hardware);
             System.out.println(hardware.toString());
         }
