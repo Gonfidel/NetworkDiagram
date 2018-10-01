@@ -83,9 +83,17 @@ public class FxController implements Initializable {
 
 
     public void buttonDel(ActionEvent actionEvent){
-        table.getItems().removeAll(table.getSelectionModel().getSelectedItems());
 
+        //System.out.println(HardwareList.hardwarelist);
+        for(Hardware h:HardwareList.hardwarelist){
+            if(table.getSelectionModel().getSelectedItem().getName()==h.getName()){
+                HardwareList.hardwarelist.remove(h);
+            }
+        }
+        System.out.println(HardwareList.hardwarelist);
+        table.getItems().removeAll(table.getSelectionModel().getSelectedItems());
     }
+
 
 }
 

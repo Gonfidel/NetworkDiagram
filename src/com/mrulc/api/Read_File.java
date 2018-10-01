@@ -6,9 +6,6 @@ import java.net.UnknownHostException;
 import java.util.Scanner;
 
 public class Read_File{
-
-
-
     public static void readFile() throws FileNotFoundException,UnknownHostException {
         File file = new File("C:\\Users\\Public\\NetworkDiagram\\data.txt");
         Scanner sc;

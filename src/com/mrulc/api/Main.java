@@ -1,9 +1,7 @@
 package com.mrulc.api;
 
-import com.mrulc.api.view.FxController;
+
 import javafx.application.Application;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -25,20 +23,15 @@ public class Main  extends Application {
         stage1.show();
     }
 
-
     public static void main(String[] args) throws Exception{
-        /**********************************
-         |      ACTIVATES GUI           |
-         *********************************/
+        /****************************************************************
+         |             Builds object lists and ACTIVATES GUI            |
+         ***************************************************************/
 
         Create_File.createFile();
         Read_File.readFile();
         launch(args);
 
     }
-
-
-
-
 
 }
