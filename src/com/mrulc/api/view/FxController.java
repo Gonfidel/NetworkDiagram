@@ -50,9 +50,12 @@ public class FxController implements Initializable {
         return data;
     }
 
-
-
-    public void buttonAdd(ActionEvent actionEvent) throws InterruptedException {
+    /**
+     *
+     * @param actionEvent
+     *
+     */
+    public void buttonAdd(ActionEvent actionEvent) {
         Hardware hardware;
         boolean isNotIpAddress;
         int numDots=0;
@@ -79,8 +82,6 @@ public class FxController implements Initializable {
             table.getItems().add(hardware);
         }
     }
-
-
 
     public void buttonDel(ActionEvent actionEvent){
         for(Hardware h:HardwareList.hardwarelist){
