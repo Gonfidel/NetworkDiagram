@@ -5,14 +5,19 @@ import java.util.List;
 
 public class HardwareList {
 
-    public static List<Hardware> hardwarelist = new ArrayList<>();
-    public static List<Hardware> terminals  = new ArrayList<>();
-    public static List<Hardware> receipt_printers  = new ArrayList<>();
-    public static List<Hardware> kitchen_screens  = new ArrayList<>();
-    public static List<Hardware> office_computers  = new ArrayList<>();
+    /**
+     * MASTER ARRAYLIST
+     */
+    static List<Hardware> hardwarelist = new ArrayList<>();
 
-
-    public static List<Hardware> office_printers  = new ArrayList<>();
+    /**
+     * SUB ARRAY LISTS
+     */
+    static List<Hardware> terminals  = new ArrayList<>();
+    static List<Hardware> receipt_printers  = new ArrayList<>();
+    static List<Hardware> kitchen_screens  = new ArrayList<>();
+    static List<Hardware> office_computers  = new ArrayList<>();
+    static List<Hardware> office_printers  = new ArrayList<>();
     public static List<Hardware> drive_thru_directors  = new ArrayList<>();
     public static List<Hardware> ocus  = new ArrayList<>();
     public static List<Hardware> phones  = new ArrayList<>();
