@@ -64,21 +64,21 @@
                                   <items>
                                     <FXCollections fx:factory="observableArrayList">
                                       <String fx:value="TERMINAL" />
-                                      <String fx:value="RECEIPT PRINTER" />
-                                      <String fx:value="KITCHEN SCREEN" />
-                                      <String fx:value="OFFICE COMPUTER" />
-                                      <String fx:value="OFFICE PRINTER" />
-                                      <String fx:value="DRIVE THRU DIRECTOR" />
+                                      <String fx:value="RECEIPT_PRINTER" />
+                                      <String fx:value="KITCHEN_SCREEN" />
+                                      <String fx:value="OFFICE_COMPUTER" />
+                                      <String fx:value="OFFICE_PRINTER" />
+                                      <String fx:value="DRIVE_THRU_DIRECTOR" />
                                       <String fx:value="OCU" />
                                       <String fx:value="PHONE" />
                                       <String fx:value="CHEF" />
                                       <String fx:value="PHU" />
-                                      <String fx:value="DMB SCREEN" />
-                                      <String fx:value="DMB CONTROLLER" />
+                                      <String fx:value="DMB_SCREEN" />
+                                      <String fx:value="DMB_CONTROLLER" />
                                       <String fx:value="KIOSK" />
                                       <String fx:value="VERIFONE" />
-                                      <String fx:value="ODMB SCREEN" />
-                                      <String fx:value="ODMB CONTROLLER" />
+                                      <String fx:value="ODMB_SCREEN" />
+                                      <String fx:value="ODMB_CONTROLLER" />
                                     </FXCollections>
                                   </items>
                                   <HBox.margin>

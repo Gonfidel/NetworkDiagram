@@ -63,6 +63,45 @@ public class Hardware {
         return SubNet;
     }
 
+    public void setTypeString(String s) {
+        switch(s){
+            case "TERMINAL":
+                type = HardwareType.TERMINAL;
+            case "RECEIPT_PRINTER":
+                type = HardwareType.RECEIPT_PRINTER;
+            case "KITCHEN_SCREEN":
+                type = HardwareType.KITCHEN_SCREEN;
+            case "OFFICE_COMPUTER":
+                type = HardwareType.OFFICE_COMPUTER;
+            case "OFFICE_PRINTER":
+                type = HardwareType.OFFICE_PRINTER;
+            case "DRIVE_THRU_DIRECTOR":
+                type = HardwareType.DRIVE_THRU_DIRECTOR;
+            case "OCU":
+                type = HardwareType.OCU;
+            case "PHONE":
+                type = HardwareType.PHONE;
+            case "CHEF":
+                type = HardwareType.CHEF;
+            case "PHU":
+                type = HardwareType.PHU;
+            case "DMB_SCREEN":
+                type = HardwareType.DMB_SCREEN;
+            case "DMB_CONTROLLER":
+                type = HardwareType.DMB_CONTROLLER;
+            case "KIOSK":
+                type = HardwareType.KIOSK;
+            case "VERIFONE":
+                type = HardwareType.VERIFONE;
+            case "ODMB_SCREEN":
+                type = HardwareType.ODMB_SCREEN;
+            case "ODMB_CONTROLLER":
+                type = HardwareType.ODMB_CONTROLLER;
+            default:
+                type = HardwareType.DEFAULT;
+        }
+    }
+
     public void setType(HardwareType type){
         this.type = type;
     }

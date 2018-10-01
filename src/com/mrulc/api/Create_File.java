@@ -29,7 +29,8 @@ public class Create_File {
             PrintWriter writer = new PrintWriter(file);
             writer.write("ManagerTerminal ");
             writer.write("192.168.1.80 ");
-            writer.write("SICOM\n");
+            writer.write("SICOM ");
+            writer.write("TERMINAL\n");
             writer.close();
             System.out.println("File created");
         } catch (Exception e) {
