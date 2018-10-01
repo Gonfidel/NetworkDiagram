@@ -11,6 +11,7 @@ public class Hardware {
     private SimpleStringProperty Name;
     private SimpleStringProperty Ip;
     private SimpleStringProperty SubNet;
+    private HardwareType type;
 
 
 /* *****************************************************************
@@ -65,10 +66,6 @@ public class Hardware {
     }
 
 
-
-
-
-
     @Override
     public String toString() {
         return "Hardware{" +
@@ -76,5 +73,10 @@ public class Hardware {
                 ", ip=" + Ip +
                 ", subNet=" + SubNet +
                 '}';
+    }
+
+
+    public enum HardwareType{
+        TERMINAL,RECEIPT_PRINTER,KITCHEN_SCREEN,OFFICE_COMPUTER,OFFICE_PRINTER,DRIVE_THRU_DIRECTOR,OCU,PHONE,CHEF,PHU,DMB_SCREEN,DMB_CONTROLLER,KIOSK,VERIFONE;
     }
 }

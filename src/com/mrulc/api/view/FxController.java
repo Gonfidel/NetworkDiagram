@@ -11,6 +11,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import javax.swing.*;
+import java.net.InetAddress;
 import java.net.URL;
 import java.net.UnknownHostException;
 import java.util.LinkedList;
@@ -60,11 +61,24 @@ public class FxController implements Initializable {
     }
 
 
-    public void buttonAdd(ActionEvent actionEvent) {
+    public void buttonAdd(ActionEvent actionEvent){
         Hardware hardware;
-        if(nameTextField.getText().trim().chars().anyMatch(Character::isWhitespace)){
-            JOptionPane.showMessageDialog(null,"Please enter a hardware name without spaces","Error",JOptionPane.ERROR_MESSAGE);
+        boolean isNotIpAddress;
+        int numDots=0;
+        try {
+            InetAddress inet = InetAddress.getByName(ipTextField.getText().trim());
+            isNotIpAddress = false;
+
+        } catch (Exception e) {
+            System.out.println(e);
+            isNotIpAddress = true;
+        }
+        if(nameTextField.getText().trim().chars().anyMatch(Character::isWhitespace)) {
+            JOptionPane.showMessageDialog(null, "Please enter a hardware name without spaces", "Error", JOptionPane.ERROR_MESSAGE);
             System.out.println("Hardware name cannot contain spaces");
+        }else if (isNotIpAddress) {
+            JOptionPane.showMessageDialog(null, "Please enter a valid IP address", "Error", JOptionPane.ERROR_MESSAGE);
+            System.out.println("Enter a valid Ip address");
         }else if (nameTextField.getText().trim().isEmpty() == false && ipTextField.getText().trim().isEmpty() == false && subnetTextField.getText().trim().isEmpty() == false) {
             hardware = new Hardware(nameTextField.getText().trim(), ipTextField.getText().trim(), subnetTextField.getText().trim());
             HardwareList.hardwarelist.add(hardware);
@@ -74,6 +88,8 @@ public class FxController implements Initializable {
             table.getItems().add(hardware);
         }
     }
+
+
 
     public void buttonDel(ActionEvent actionEvent){
         table.getItems().removeAll(table.getSelectionModel().getSelectedItems());
