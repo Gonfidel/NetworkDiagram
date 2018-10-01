@@ -65,6 +65,13 @@ public class Hardware {
         return SubNet;
     }
 
+    public HardwareType getType(){
+        if(type==null){
+            type = HardwareType.DEFAULT;
+        }
+        return type;
+    }
+
 
     @Override
     public String toString() {
@@ -82,6 +89,6 @@ public class Hardware {
         OFFICE_PRINTER,DRIVE_THRU_DIRECTOR,
         OCU,PHONE,CHEF,PHU,DMB_SCREEN,
         DMB_CONTROLLER,KIOSK,VERIFONE,
-        ODMB_SCREEN,ODMB_CONTROLLER;
+        ODMB_SCREEN,ODMB_CONTROLLER,DEFAULT;
     }
 }
