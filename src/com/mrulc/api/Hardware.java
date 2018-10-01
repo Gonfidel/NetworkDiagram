@@ -33,15 +33,13 @@ public class Hardware {
         this.SubNet = new SimpleStringProperty(subNet);
         this.type = type;
     }
-/* *************************************************************** */
-
+/* ***************************************************************
+|                         METHODS                                |
+******************************************************************/
     public void setName(String name) {
         this.Name = new SimpleStringProperty(name);
 }
-
-    public void setIp(String ip) {
-        this.Ip = new SimpleStringProperty(ip);    }
-
+    public void setIp(String ip) { this.Ip = new SimpleStringProperty(ip);    }
     public void setSubNet(String subNet){
         this.SubNet = new SimpleStringProperty(subNet);
     }
@@ -55,8 +53,6 @@ public class Hardware {
     public String getSubNet() {
         return SubNet.get();
     }
-
-
     public SimpleStringProperty getPropertyName() {
         return Name;
     }
@@ -70,14 +66,9 @@ public class Hardware {
     public void setType(HardwareType type){
         this.type = type;
     }
-
-    public HardwareType getType(){
-        if(type==null){
-            type = HardwareType.DEFAULT;
-        }
+    public HardwareType getType(){ if(type==null){ type = HardwareType.DEFAULT;  }
         return type;
     }
-
 
     @Override
     public String toString() {
@@ -87,6 +78,10 @@ public class Hardware {
                 ", subNet=" + SubNet +
                 '}';
     }
+
+    /* ***************************************************************
+    |                     HARDWARE TYPE ENUM                          |
+    ******************************************************************/
 
     public enum HardwareType{
         TERMINAL,RECEIPT_PRINTER,
