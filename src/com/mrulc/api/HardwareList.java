@@ -34,22 +34,39 @@ public class HardwareList {
         for(Hardware h:hardwarelist){
             switch(h.getType()){
                 case TERMINAL:
+                    terminals.add(h);
                 case RECEIPT_PRINTER:
+                    receipt_printers.add(h);
                 case KITCHEN_SCREEN:
+                    kitchen_screens.add(h);
                 case OFFICE_COMPUTER:
+                    office_computers.add(h);
                 case OFFICE_PRINTER:
+                    office_printers.add(h);
                 case DRIVE_THRU_DIRECTOR:
+                    drive_thru_directors.add(h);
                 case OCU:
+                    ocus.add(h);
                 case PHONE:
+                    phones.add(h);
                 case CHEF:
+                    chefs.add(h);
                 case PHU:
+                    phus.add(h);
                 case DMB_SCREEN:
+                    dmb_screens.add(h);
                 case DMB_CONTROLLER:
+                    dmb_controllers.add(h);
                 case KIOSK:
+                    kiosks.add(h);
                 case VERIFONE:
+                    verifones.add(h);
                 case ODMB_SCREEN:
+                    odmb_screens.add(h);
                 case ODMB_CONTROLLER:
+                    odmb_controllers.add(h);
                 default:
+                    System.out.println("Hardware "+h.getName()+" does not containt a hardware type.");
 
             }
         }
