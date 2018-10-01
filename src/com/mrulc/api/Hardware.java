@@ -63,50 +63,95 @@ public class Hardware {
         return SubNet;
     }
 
-    public void setTypeString(String s) {
-        switch(s){
+    public void setTypeString(String type) {
+        switch(type.trim()){
             case "TERMINAL":
-                type = HardwareType.TERMINAL;
+                this.type = HardwareType.TERMINAL;
             case "RECEIPT_PRINTER":
-                type = HardwareType.RECEIPT_PRINTER;
+                this.type = HardwareType.RECEIPT_PRINTER;
             case "KITCHEN_SCREEN":
-                type = HardwareType.KITCHEN_SCREEN;
+                this.type = HardwareType.KITCHEN_SCREEN;
             case "OFFICE_COMPUTER":
-                type = HardwareType.OFFICE_COMPUTER;
+                this.type = HardwareType.OFFICE_COMPUTER;
             case "OFFICE_PRINTER":
-                type = HardwareType.OFFICE_PRINTER;
+                this.type = HardwareType.OFFICE_PRINTER;
             case "DRIVE_THRU_DIRECTOR":
-                type = HardwareType.DRIVE_THRU_DIRECTOR;
+                this.type = HardwareType.DRIVE_THRU_DIRECTOR;
             case "OCU":
-                type = HardwareType.OCU;
+                this.type = HardwareType.OCU;
             case "PHONE":
-                type = HardwareType.PHONE;
+                this.type = HardwareType.PHONE;
             case "CHEF":
-                type = HardwareType.CHEF;
+                this.type = HardwareType.CHEF;
             case "PHU":
-                type = HardwareType.PHU;
+                this.type = HardwareType.PHU;
             case "DMB_SCREEN":
-                type = HardwareType.DMB_SCREEN;
+                this.type = HardwareType.DMB_SCREEN;
             case "DMB_CONTROLLER":
-                type = HardwareType.DMB_CONTROLLER;
+                this.type = HardwareType.DMB_CONTROLLER;
             case "KIOSK":
-                type = HardwareType.KIOSK;
+                this.type = HardwareType.KIOSK;
             case "VERIFONE":
-                type = HardwareType.VERIFONE;
+                this.type = HardwareType.VERIFONE;
             case "ODMB_SCREEN":
-                type = HardwareType.ODMB_SCREEN;
+                this.type = HardwareType.ODMB_SCREEN;
             case "ODMB_CONTROLLER":
-                type = HardwareType.ODMB_CONTROLLER;
+                this.type = HardwareType.ODMB_CONTROLLER;
             default:
-                type = HardwareType.DEFAULT;
+                this.type = HardwareType.DEFAULT;
+            }
+    }
+    public String getTypeString(){
+        String type_string;
+
+        switch(type){
+            case TERMINAL:
+                type_string = "TERMINAL";
+            case RECEIPT_PRINTER:
+                type_string = "RECEIPT_PRINTER";
+            case KITCHEN_SCREEN:
+                type_string = "KITCHEN_SCREEN";
+            case OFFICE_COMPUTER:
+                type_string = "OFFICE_COMPUTER";
+            case OFFICE_PRINTER:
+                type_string = "OFFICE_PRINTER";
+            case DRIVE_THRU_DIRECTOR:
+                type_string = "DRIVE_THRU_DIRECTOR";
+            case OCU:
+                type_string = "OCU";
+            case PHONE:
+                type_string = "PHONE";
+            case CHEF:
+                type_string = "CHEF";
+            case PHU:
+                type_string = "PHU";
+            case DMB_SCREEN:
+                type_string = "DMB_SCREEN";
+            case DMB_CONTROLLER:
+                type_string = "DMB_CONTROLLER";
+            case KIOSK:
+                type_string = "KIOSK";
+            case VERIFONE:
+                type_string = "VERIFONE";;
+            case ODMB_SCREEN:
+                type_string = "ODMB_SCREEN";
+            case ODMB_CONTROLLER:
+                type_string = "ODMB_CONTROLLER";
+            default:
+                type_string = "DEFAULT";
         }
+
+        return type_string;
     }
 
     public void setType(HardwareType type){
         this.type = type;
     }
-    public HardwareType getType(){ if(type==null){ type = HardwareType.DEFAULT;  }
-        return type;
+    public HardwareType getType(){
+        if(type==null){
+            type = HardwareType.DEFAULT;
+        }
+            return type;
     }
 
     @Override
@@ -115,6 +160,7 @@ public class Hardware {
                 "name='" + Name + '\'' +
                 ", ip=" + Ip +
                 ", subNet=" + SubNet +
+                ", Type=" + type +
                 '}';
     }
 
@@ -131,3 +177,4 @@ public class Hardware {
         ODMB_SCREEN,ODMB_CONTROLLER,DEFAULT;
     }
 }
+

@@ -3,6 +3,7 @@ package com.mrulc.api;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.net.UnknownHostException;
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Read_File{
@@ -15,6 +16,7 @@ public class Read_File{
             hardware.setName(sc.next());
             hardware.setIp(sc.next());
             hardware.setSubNet(sc.next());
+            hardware.setTypeString(sc.next());
             HardwareList.hardwarelist.add(hardware);
             System.out.println(hardware.toString());
         }

@@ -28,6 +28,10 @@ public class Main  extends Application {
          |             Builds object lists and ACTIVATES GUI            |
          ***************************************************************/
 
+        Hardware item = new Hardware("name", "192.168.1.80", "SICOM");
+        item.setTypeString("TERMINAL");
+        HardwareList.hardwarelist.add(item);
+        System.out.println(HardwareList.hardwarelist);
         Create_File.createFile();
         Read_File.readFile();
         launch(args);
