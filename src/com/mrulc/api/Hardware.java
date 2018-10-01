@@ -25,7 +25,14 @@ public class Hardware {
          this.Name = new SimpleStringProperty(name);
          this.Ip = new SimpleStringProperty(ip);
          this.SubNet = new SimpleStringProperty(subNet);
-}
+         this.type = HardwareType.DEFAULT;
+    }
+    public Hardware(String name, String ip, String subNet,HardwareType type){
+        this.Name = new SimpleStringProperty(name);
+        this.Ip = new SimpleStringProperty(ip);
+        this.SubNet = new SimpleStringProperty(subNet);
+        this.type = type;
+    }
 /* *************************************************************** */
 
     public void setName(String name) {
