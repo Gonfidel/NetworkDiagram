@@ -34,22 +34,12 @@ public class FxController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
-        //hwCol = new TableColumn<>("hwCol");
-        //ipCol = new TableColumn<>("ipCol");
-        //subnetCol = new TableColumn<>("subnetCol");
-
         hwCol.setCellValueFactory(new PropertyValueFactory<>("Name"));
         ipCol.setCellValueFactory(new PropertyValueFactory<>("Ip"));
         subnetCol.setCellValueFactory(new PropertyValueFactory<>("SubNet"));
 
-
         table.setItems(getData());
-        //System.out.println(getData());
-
-
     }
-
 
     /**
      * CONFIGURE OBSERVABLE TABLE
@@ -61,12 +51,13 @@ public class FxController implements Initializable {
     }
 
 
-    public void buttonAdd(ActionEvent actionEvent){
+
+    public void buttonAdd(ActionEvent actionEvent) throws InterruptedException {
         Hardware hardware;
         boolean isNotIpAddress;
         int numDots=0;
         try {
-            InetAddress inet = InetAddress.getByName(ipTextField.getText().trim());
+            InetAddress inet = InetAddress.getByName(ipTextField.getText());
             isNotIpAddress = false;
 
         } catch (Exception e) {
