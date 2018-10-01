@@ -8,7 +8,11 @@ import java.util.Scanner;
 
 public class Create_File {
     public static void createFile() throws Exception {
+        File dir = new File("C:\\Users\\Public\\NetworkDiagram\\");
         File file = new File("C:\\Users\\Public\\NetworkDiagram\\data.txt");
+
+
+
 
         try {
             Scanner sc = new Scanner(file);
@@ -16,11 +20,18 @@ public class Create_File {
                 System.out.println("File already exists, no action performed");
             }
         } catch (FileNotFoundException e) {
+            try {
+                dir.mkdir();
+                System.out.println("Directory created");
+            } catch (Exception e1) {
+                System.out.println("Error creating directory");
+            }
             PrintWriter writer = new PrintWriter(file);
             writer.write("ManagerTerminal ");
             writer.write("192.168.1.80 ");
             writer.write("SICOM\n");
             writer.close();
+            System.out.println("File created");
         } catch (Exception e) {
             System.out.println("Severe error");
         }

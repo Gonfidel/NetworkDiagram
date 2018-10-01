@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import javax.swing.*;
 import java.net.URL;
 import java.net.UnknownHostException;
 import java.util.LinkedList;
@@ -30,8 +31,6 @@ public class FxController implements Initializable {
     public Button delButton = new Button();
 
 
-
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -44,7 +43,6 @@ public class FxController implements Initializable {
         subnetCol.setCellValueFactory(new PropertyValueFactory<>("SubNet"));
 
 
-
         table.setItems(getData());
         //System.out.println(getData());
 
@@ -53,7 +51,7 @@ public class FxController implements Initializable {
 
 
     /**
-     *  CONFIGURE OBSERVABLE TABLE
+     * CONFIGURE OBSERVABLE TABLE
      */
     public ObservableList<Hardware> getData() {
         ObservableList<Hardware> data = FXCollections.observableArrayList(HardwareList.hardwarelist);
@@ -64,26 +62,26 @@ public class FxController implements Initializable {
 
     public void buttonAdd(ActionEvent actionEvent) {
         Hardware hardware;
-        if (nameTextField.getText().trim().isEmpty() == false) {
-            if (ipTextField.getText().trim().isEmpty() == false) {
-                if (subnetTextField.getText().trim().isEmpty() == false) {
-                    hardware = new Hardware(nameTextField.getText().trim(), ipTextField.getText().trim(), subnetTextField.getText().trim());
-                    HardwareList.hardwarelist.add(hardware);
-                    nameTextField.clear();
-                    ipTextField.clear();
-                    subnetTextField.clear();
-                    table.getItems().add(hardware);
-                }
-            }
+        if(nameTextField.getText().trim().chars().anyMatch(Character::isWhitespace)){
+            JOptionPane.showMessageDialog(null,"Please enter a hardware name without spaces","Error",JOptionPane.ERROR_MESSAGE);
+            System.out.println("Hardware name cannot contain spaces");
+        }else if (nameTextField.getText().trim().isEmpty() == false && ipTextField.getText().trim().isEmpty() == false && subnetTextField.getText().trim().isEmpty() == false) {
+            hardware = new Hardware(nameTextField.getText().trim(), ipTextField.getText().trim(), subnetTextField.getText().trim());
+            HardwareList.hardwarelist.add(hardware);
+            nameTextField.clear();
+            ipTextField.clear();
+            subnetTextField.clear();
+            table.getItems().add(hardware);
         }
     }
 
-    public void buttonDel(ActionEvent actionEvent) {
+    public void buttonDel(ActionEvent actionEvent){
         table.getItems().removeAll(table.getSelectionModel().getSelectedItems());
 
     }
 
 }
+
 
 
 
