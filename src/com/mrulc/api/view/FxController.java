@@ -75,29 +75,37 @@ public class FxController implements Initializable {
             System.out.println(e);
             isNotIpAddress = true;
         }
+
         if(nameTextField.getText().trim().chars().anyMatch(Character::isWhitespace)) {
             JOptionPane.showMessageDialog(null, "Please enter a hardware name without spaces", "Error", JOptionPane.ERROR_MESSAGE);
             System.out.println("Hardware name cannot contain spaces");
         }else if (isNotIpAddress) {
             JOptionPane.showMessageDialog(null, "Please enter a valid IP address", "Error", JOptionPane.ERROR_MESSAGE);
             System.out.println("Enter a valid Ip address");
-        }else if (nameTextField.getText().trim().isEmpty() == false && ipTextField.getText().trim().isEmpty() == false && subnetTextField.getText().trim().isEmpty() == false) {
-            hardware = new Hardware(nameTextField.getText().trim(), ipTextField.getText().trim(), subnetTextField.getText().trim());
+        }else if(typeComboBox.getSelectionModel().isEmpty()){  /** WE HAVE A PROBLEM HERE CADET*/
+            JOptionPane.showMessageDialog(null, "Please select a hardware type", "Error", JOptionPane.ERROR_MESSAGE);
+        }else if (nameTextField.getText().trim().isEmpty() == false && ipTextField.getText().trim().isEmpty() == false
+                && subnetTextField.getText().trim().isEmpty() == false && typeComboBox.getSelectionModel().getSelectedItem().toString() != "Hardware Type") {
+            hardware = new Hardware(nameTextField.getText().trim(), ipTextField.getText().trim(), subnetTextField.getText().trim(), typeComboBox.getSelectionModel().getSelectedItem().toString());
             HardwareList.hardwarelist.add(hardware);
             nameTextField.clear();
             ipTextField.clear();
             subnetTextField.clear();
+            typeComboBox.getSelectionModel().clearSelection();
             table.getItems().add(hardware);
         }
     }
 
     public void buttonDel(ActionEvent actionEvent){
+        String itemName = table.getSelectionModel().getSelectedItem().toString();
+        table.getItems().removeAll(table.getSelectionModel().getSelectedItems());
+
         for(Hardware h:HardwareList.hardwarelist){
-            if(table.getSelectionModel().getSelectedItem().getName()==h.getName()){
+            if(itemName==h.getName()){
                 HardwareList.hardwarelist.remove(h);
             }
         }
-        table.getItems().removeAll(table.getSelectionModel().getSelectedItems());
+
     }
 
 

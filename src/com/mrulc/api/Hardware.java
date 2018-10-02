@@ -33,6 +33,65 @@ public class Hardware {
         this.SubNet = new SimpleStringProperty(subNet);
         this.type = type;
     }
+    public Hardware(String name, String ip, String subNet,String type){
+        this.Name = new SimpleStringProperty(name);
+        this.Ip = new SimpleStringProperty(ip);
+        this.SubNet = new SimpleStringProperty(subNet);
+
+        switch(type){
+        case "TERMINAL":
+        this.type = HardwareType.TERMINAL;
+        break;
+        case "RECEIPT_PRINTER":
+        this.type = HardwareType.RECEIPT_PRINTER;
+        break;
+        case "KITCHEN_SCREEN":
+        this.type = HardwareType.KITCHEN_SCREEN;
+        break;
+        case "OFFICE_COMPUTER":
+        this.type = HardwareType.OFFICE_COMPUTER;
+        break;
+        case "OFFICE_PRINTER":
+        this.type = HardwareType.OFFICE_PRINTER;
+        break;
+        case "DRIVE_THRU_DIRECTOR":
+        this.type = HardwareType.DRIVE_THRU_DIRECTOR;
+        break;
+        case "OCU":
+        this.type = HardwareType.OCU;
+        break;
+        case "PHONE":
+        this.type = HardwareType.PHONE;
+        break;
+        case "CHEF":
+        this.type = HardwareType.CHEF;
+        break;
+        case "PHU":
+        this.type = HardwareType.PHU;
+        break;
+        case "DMB_SCREEN":
+        this.type = HardwareType.DMB_SCREEN;
+        break;
+        case "DMB_CONTROLLER":
+        this.type = HardwareType.DMB_CONTROLLER;
+        break;
+        case "KIOSK":
+        this.type = HardwareType.KIOSK;
+        break;
+        case "VERIFONE":
+        this.type = HardwareType.VERIFONE;
+        break;
+        case "ODMB_SCREEN":
+        this.type = HardwareType.ODMB_SCREEN;
+        break;
+        case "ODMB_CONTROLLER":
+        this.type = HardwareType.ODMB_CONTROLLER;
+        break;
+        default:
+        this.type = HardwareType.DEFAULT;
+        break;
+    }
+    }
 /* ***************************************************************
 |                         METHODS                                |
 ******************************************************************/
