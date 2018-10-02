@@ -1,5 +1,6 @@
 package com.mrulc.api.view;
 
+import com.mrulc.api.Create_File;
 import com.mrulc.api.Hardware;
 import com.mrulc.api.HardwareList;
 import javafx.collections.FXCollections;
@@ -37,7 +38,7 @@ public class FxController implements Initializable {
     //BUTTONS
     public Button addButton = new Button();
     public Button delButton = new Button();
-
+    public Button saveButton = new Button();
 
 
     @Override
@@ -82,10 +83,9 @@ public class FxController implements Initializable {
         }else if (isNotIpAddress) {
             JOptionPane.showMessageDialog(null, "Please enter a valid IP address", "Error", JOptionPane.ERROR_MESSAGE);
             System.out.println("Enter a valid Ip address");
-        }else if(typeComboBox.getSelectionModel().isEmpty()){  /** WE HAVE A PROBLEM HERE CADET*/
+        }else if(typeComboBox.getSelectionModel().isEmpty()){
             JOptionPane.showMessageDialog(null, "Please select a hardware type", "Error", JOptionPane.ERROR_MESSAGE);
-        }else if (nameTextField.getText().trim().isEmpty() == false && ipTextField.getText().trim().isEmpty() == false
-                && subnetTextField.getText().trim().isEmpty() == false && typeComboBox.getSelectionModel().getSelectedItem().toString() != "Hardware Type") {
+        }else if (nameTextField.getText().trim().isEmpty() == false && ipTextField.getText().trim().isEmpty() == false && subnetTextField.getText().trim().isEmpty() == false && typeComboBox.getSelectionModel().getSelectedItem().toString() != "Hardware Type") {
             hardware = new Hardware(nameTextField.getText().trim(), ipTextField.getText().trim(), subnetTextField.getText().trim(), typeComboBox.getSelectionModel().getSelectedItem().toString());
             HardwareList.hardwarelist.add(hardware);
             nameTextField.clear();
@@ -109,6 +109,10 @@ public class FxController implements Initializable {
     }
 
 
+    public void buttonSave(ActionEvent actionEvent) {
+        Create_File.saveConfig();
+        JOptionPane.showMessageDialog(null,"Configuration saved!","Confirmation",1);
+    }
 }
 
 

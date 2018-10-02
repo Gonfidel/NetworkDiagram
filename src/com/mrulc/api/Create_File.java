@@ -7,13 +7,11 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Create_File {
+
+    static File dir = new File("C:\\Users\\Public\\NetworkDiagram\\");
+    static File file = new File("C:\\Users\\Public\\NetworkDiagram\\data.txt");
+
     public static void createFile() throws Exception {
-        File dir = new File("C:\\Users\\Public\\NetworkDiagram\\");
-        File file = new File("C:\\Users\\Public\\NetworkDiagram\\data.txt");
-
-
-
-
         try {
             Scanner sc = new Scanner(file);
             if (sc.hasNext()) {
@@ -35,6 +33,26 @@ public class Create_File {
             System.out.println("File created");
         } catch (Exception e) {
             System.out.println("Severe error");
+        }
+    }
+
+    public static void saveConfig(){
+        file.delete();
+        try {
+            PrintWriter writer = new PrintWriter(file);
+            for(Hardware h:HardwareList.hardwarelist){
+                writer.write(h.getName());
+                writer.write("\t");
+                writer.write(h.getIp());
+                writer.write("\t");
+                writer.write(h.getSubNet());
+                writer.write("\t");
+                writer.write(h.getTypeString());
+                writer.write("\n");
+            }
+             writer.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("Error saving config");
         }
     }
 }
