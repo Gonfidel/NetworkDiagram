@@ -1,5 +1,6 @@
 package com.mrulc.api;
 
+import javax.swing.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -36,11 +37,11 @@ public class Create_File {
         }
     }
 
-    public static void saveConfig(){
-        file.delete();
-        try {
-            PrintWriter writer = new PrintWriter(file);
-            for(Hardware h:HardwareList.hardwarelist){
+    public static void saveConfig()throws FileNotFoundException{
+        PrintWriter writer = new PrintWriter(file);
+        writer.write("");
+        try{
+            for(Hardware h:HardwareList.hardwarelist) {
                 writer.write(h.getName());
                 writer.write("\t");
                 writer.write(h.getIp());
@@ -50,9 +51,9 @@ public class Create_File {
                 writer.write(h.getTypeString());
                 writer.write("\n");
             }
-             writer.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("Error saving config");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"There was an error saving your settings","Error",0);
         }
+        writer.close();
     }
 }

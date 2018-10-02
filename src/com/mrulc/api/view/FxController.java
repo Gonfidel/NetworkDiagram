@@ -12,6 +12,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import javax.swing.*;
+import java.io.FileNotFoundException;
 import java.net.InetAddress;
 import java.net.URL;
 import java.net.UnknownHostException;
@@ -97,7 +98,7 @@ public class FxController implements Initializable {
     }
 
     public void buttonDel(ActionEvent actionEvent){
-        String itemName = table.getSelectionModel().getSelectedItem().toString();
+        String itemName = table.getSelectionModel().getSelectedItem().getName();
         table.getItems().removeAll(table.getSelectionModel().getSelectedItems());
 
         for(Hardware h:HardwareList.hardwarelist){
@@ -110,8 +111,13 @@ public class FxController implements Initializable {
 
 
     public void buttonSave(ActionEvent actionEvent) {
-        Create_File.saveConfig();
-        JOptionPane.showMessageDialog(null,"Configuration saved!","Confirmation",1);
+        try {
+            Create_File.saveConfig();
+            JOptionPane.showMessageDialog(null, "Configuration saved!", "Confirmation", 1);
+            System.out.println(HardwareList.hardwarelist);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "An error has occured!", "Error", 0);
+        }
     }
 }
 
