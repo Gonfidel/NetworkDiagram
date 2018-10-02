@@ -72,12 +72,10 @@ public class FxController implements Initializable {
         try {
             InetAddress inet = InetAddress.getByName(ipTextField.getText());
             isNotIpAddress = false;
-
         } catch (Exception e) {
             System.out.println(e);
             isNotIpAddress = true;
         }
-
         if(nameTextField.getText().trim().chars().anyMatch(Character::isWhitespace)) {
             JOptionPane.showMessageDialog(null, "Please enter a hardware name without spaces", "Error", JOptionPane.ERROR_MESSAGE);
             System.out.println("Hardware name cannot contain spaces");
@@ -95,6 +93,7 @@ public class FxController implements Initializable {
             typeComboBox.getSelectionModel().clearSelection();
             table.getItems().add(hardware);
         }
+        HardwareList.subCatagorize();
     }
 
     public void buttonDel(ActionEvent actionEvent){
