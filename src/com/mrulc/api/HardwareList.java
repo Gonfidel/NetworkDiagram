@@ -87,6 +87,25 @@ public class HardwareList {
             }
         }
     }
+    public static void resetSubLists(){
+        receipt_printers.clear();
+        kitchen_screens.clear();
+        office_computers.clear();
+        office_printers.clear();
+        drive_thru_directors.clear();
+        ocus.clear();
+        phones.clear();
+        chefs.clear();
+        phus.clear();
+        dmb_screens.clear();
+        dmb_controllers.clear();
+        kiosks.clear();
+        verifones.clear();
+        odmb_screens.clear();
+        odmb_controllers.clear();
+
+    }
+
 
 }
 

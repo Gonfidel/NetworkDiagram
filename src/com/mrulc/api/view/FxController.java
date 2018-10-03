@@ -10,6 +10,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 import javax.swing.*;
 import java.io.FileNotFoundException;
@@ -41,6 +43,17 @@ public class FxController implements Initializable {
     public Button delButton = new Button();
     public Button saveButton = new Button();
 
+    //LABELS
+    public Label TerminalLabel = new Label();
+    public Label KitchenScreenLabel = new Label();
+    public Label ReceiptPrinterLabel = new Label();
+    public Label VerifoneLabel = new Label();
+
+
+
+
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -49,6 +62,24 @@ public class FxController implements Initializable {
         subnetCol.setCellValueFactory(new PropertyValueFactory<>("SubNet"));
         typeCol.setCellValueFactory(new PropertyValueFactory<>("type"));
         table.setItems(getData());
+
+        ImageView terminalImage = new ImageView("/com/mrulc/api/images/TERMINAL.png");
+        ImageView kitchenScreenImage = new ImageView("/com/mrulc/api/images/KITCHEN_SCREEN.png");
+        ImageView receiptPrinterImage = new ImageView("/com/mrulc/api/images/R_PRINTER.png");
+        ImageView verifoneImage = new ImageView("/com/mrulc/api/images/VERIFONE.png");
+
+        TerminalLabel.setText("");
+        KitchenScreenLabel.setText("");
+        ReceiptPrinterLabel.setText("");
+        VerifoneLabel.setText("");
+
+        TerminalLabel.setGraphic(terminalImage);
+        KitchenScreenLabel.setGraphic(kitchenScreenImage);
+        ReceiptPrinterLabel.setGraphic(receiptPrinterImage);
+        VerifoneLabel.setGraphic(verifoneImage);
+
+
+
     }
 
     /**
@@ -93,6 +124,7 @@ public class FxController implements Initializable {
             typeComboBox.getSelectionModel().clearSelection();
             table.getItems().add(hardware);
         }
+        HardwareList.resetSubLists();
         HardwareList.subCatagorize();
     }
 
@@ -105,7 +137,8 @@ public class FxController implements Initializable {
                 HardwareList.hardwarelist.remove(h);
             }
         }
-
+        HardwareList.resetSubLists();
+        HardwareList.subCatagorize();
     }
 
 
