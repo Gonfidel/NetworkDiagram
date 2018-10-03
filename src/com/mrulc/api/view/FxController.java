@@ -50,11 +50,6 @@ public class FxController implements Initializable {
     public Label VerifoneLabel = new Label();
 
 
-
-
-
-
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         hwCol.setCellValueFactory(new PropertyValueFactory<>("Name"));
@@ -63,10 +58,11 @@ public class FxController implements Initializable {
         typeCol.setCellValueFactory(new PropertyValueFactory<>("type"));
         table.setItems(getData());
 
-        ImageView terminalImage = new ImageView("/com/mrulc/api/images/TERMINAL.png");
+        ImageView terminalImage = new ImageView("/com/mrulc/api/images/TERMINAL.jpg");
         ImageView kitchenScreenImage = new ImageView("/com/mrulc/api/images/KITCHEN_SCREEN.png");
-        ImageView receiptPrinterImage = new ImageView("/com/mrulc/api/images/R_PRINTER.png");
+        ImageView receiptPrinterImage = new ImageView("/com/mrulc/api/images/RECEIPT_PRINTER.png");
         ImageView verifoneImage = new ImageView("/com/mrulc/api/images/VERIFONE.png");
+
 
         TerminalLabel.setText("");
         KitchenScreenLabel.setText("");
