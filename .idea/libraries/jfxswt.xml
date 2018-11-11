@@ -1,8 +1,6 @@
 <component name="libraryTable">
   <library name="jfxswt">
-    <CLASSES>
-      <root url="jar://$USER_HOME$/Desktop/library/GLUON/rt/lib/jfxswt.jar!/" />
-    </CLASSES>
+    <CLASSES />
     <JAVADOC />
     <SOURCES />
   </library>

@@ -48,8 +48,7 @@ public class FxController implements Initializable {
     public Label KitchenScreenLabel = new Label();
     public Label ReceiptPrinterLabel = new Label();
     public Label VerifoneLabel = new Label();
-
-
+    
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         hwCol.setCellValueFactory(new PropertyValueFactory<>("Name"));
@@ -73,9 +72,6 @@ public class FxController implements Initializable {
         KitchenScreenLabel.setGraphic(kitchenScreenImage);
         ReceiptPrinterLabel.setGraphic(receiptPrinterImage);
         VerifoneLabel.setGraphic(verifoneImage);
-
-
-
     }
 
     /**
